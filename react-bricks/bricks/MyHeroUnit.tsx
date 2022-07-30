@@ -2,37 +2,20 @@ import React, { Children, useState } from 'react'
 import { Text, RichText, Image, types } from 'react-bricks/frontend'
 
 import { Disclosure,  Menu, Transition } from '@headlessui/react'
-//=============================
-// Local Types
-//=============================
+import signature from '../../public/images/signature.png'
 
-type Padding = 'big' | 'small'
-
-interface HeroUnitProps {
-  padding: Padding
-  title: string
-  text: string
-}
-
-//=============================
-// Component to be rendered
-//=============================
-const MyHeroUnit: types.Brick<HeroUnitProps> = ({ padding }) => {
+const MyHeroUnit= ({ padding }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
 <header className="text-gray-600 body-font">
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-      <a className="mr-5 hover:text-gray-900">First Link</a>
-      <a className="mr-5 hover:text-gray-900">Second Link</a>
-      <a className="mr-5 hover:text-gray-900">Third Link</a>
-      <a className="hover:text-gray-900">Fourth Link</a>
+      <a className="mr-5 hover:text-gray-900" href='google.com'>Projects</a>
+      <a className="mr-5 hover:text-gray-900">Ego</a>
+      <a className="mr-5 hover:text-gray-900">Expirience</a>
     </nav>
     <a className="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span className="ml-3 text-xl">Tailblocks</span>
+      <img src={signature.src} style={{width:'150px'}}></img>
     </a>
     <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
       <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
